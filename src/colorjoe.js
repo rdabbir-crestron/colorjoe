@@ -113,6 +113,15 @@ function setup(o) {
             xy,
             z
         );
+        col = cbs.xy(
+            col,
+            {
+                x: utils.clamp(p.x, 0, 1),
+                y: utils.clamp(p.y, 0, 1),
+            },
+            xy,
+            z
+        );
         changed();
     }
 

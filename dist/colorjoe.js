@@ -1,5 +1,5 @@
 /*! colorjoe - v4.2.0 - Juho Vepsalainen <bebraw@gmail.com> - MIT
-https://bebraw.github.com/colorjoe - 2022-11-09 */
+https://bebraw.github.com/colorjoe - 2022-11-17 */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 	typeof define === 'function' && define.amd ? define(factory) :
@@ -594,6 +594,15 @@ https://bebraw.github.com/colorjoe - 2022-11-09 */
 	    });
 
 	    function changeXY(p) {
+	        col = cbs.xy(
+	            col,
+	            {
+	                x: utils.clamp(p.x, 0, 1),
+	                y: utils.clamp(p.y, 0, 1),
+	            },
+	            xy,
+	            z
+	        );
 	        col = cbs.xy(
 	            col,
 	            {
