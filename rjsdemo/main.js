@@ -1,7 +1,7 @@
-requirejs(['../dist/colorjoe'], function(colorjoe) {
+requirejs(['../dist/mycolorpicker'], function(mycolorpicker) {
     var val = document.getElementById('rgbValue');
 
-    colorjoe.rgb('rgbPicker').on('change', function(c) {
+    mycolorpicker.rgb('rgbPicker').on('change', function(c) {
         val.innerHTML = c.css();
     });
 });

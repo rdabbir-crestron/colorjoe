@@ -1,9 +1,9 @@
-/*! colorjoe - v4.2.0 - Juho Vepsalainen <bebraw@gmail.com> - MIT
-https://bebraw.github.com/colorjoe - 2022-11-17 */
+/*! mycolorpicker - v1.0.0 - Raghavendra Kumar Dabbir - MIT
+ - 2022-11-18 */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 	typeof define === 'function' && define.amd ? define(factory) :
-	(global.colorjoe = factory());
+	(global.mycolorpicker = factory());
 }(this, (function () { 'use strict';
 
 	var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
@@ -493,9 +493,9 @@ https://bebraw.github.com/colorjoe - 2022-11-17 */
 
 
 
-	var colorjoe = function(cbs) {
+	var mycolorpicker = function(cbs) {
 	    if (!all(isFunction, [cbs.init, cbs.xy, cbs.z])) {
-	        return console.warn("colorjoe: missing cb");
+	        return console.warn("mycolorpicker: missing cb");
 	    }
 
 	    return function(element, initialColor, extras$$1) {
@@ -509,7 +509,7 @@ https://bebraw.github.com/colorjoe - 2022-11-17 */
 	};
 
 	/* pickers */
-	colorjoe.rgb = colorjoe({
+	mycolorpicker.rgb = mycolorpicker({
 	    init: function(col, xy, z) {
 	        var ret = oneColorAll(col).hsv();
 
@@ -532,7 +532,7 @@ https://bebraw.github.com/colorjoe - 2022-11-17 */
 	    },
 	});
 
-	colorjoe.hsl = colorjoe({
+	mycolorpicker.hsl = mycolorpicker({
 	    init: function(col, xy, z) {
 	        var ret = oneColorAll(col).hsl();
 
@@ -555,18 +555,18 @@ https://bebraw.github.com/colorjoe - 2022-11-17 */
 	    },
 	});
 
-	colorjoe.extras = {};
+	mycolorpicker.extras = {};
 
-	colorjoe.registerExtra = function(name, fn) {
-	    if (name in colorjoe.extras) {
+	mycolorpicker.registerExtra = function(name, fn) {
+	    if (name in mycolorpicker.extras) {
 	        console.warn('Extra "' + name + '"has been registered already!');
 	    }
 
-	    colorjoe.extras[name] = fn;
+	    mycolorpicker.extras[name] = fn;
 	};
 
 	for (var k in extras) {
-	    colorjoe.registerExtra(k, extras[k]);
+	    mycolorpicker.registerExtra(k, extras[k]);
 	}
 
 	function RGB_BG(e, h) {
@@ -575,7 +575,7 @@ https://bebraw.github.com/colorjoe - 2022-11-17 */
 
 	function setup(o) {
 	    if (!o.e) {
-	        return console.warn("colorjoe: missing element");
+	        return console.warn("mycolorpicker: missing element");
 	    }
 
 	    var e = isString(o.e) ? document.getElementById(o.e) : o.e;
@@ -712,7 +712,7 @@ https://bebraw.github.com/colorjoe - 2022-11-17 */
 	                listeners[evt].push({ name: name, fn: cb });
 	            } else {
 	                console.warn(
-	                    'Passed invalid evt name "' + evt + '" to colorjoe.on'
+	                    'Passed invalid evt name "' + evt + '" to mycolorpicker.on'
 	                );
 	            }
 
@@ -752,7 +752,7 @@ https://bebraw.github.com/colorjoe - 2022-11-17 */
 	    }
 
 	    if (isDefined(c)) {
-	        console.warn("Passed invalid color to colorjoe, using black instead");
+	        console.warn("Passed invalid color to mycolorpicker, using black instead");
 	    }
 
 	    return oneColorAll("#000");
@@ -776,7 +776,7 @@ https://bebraw.github.com/colorjoe - 2022-11-17 */
 	            name = e;
 	            params = {};
 	        }
-	        var extra = name in colorjoe.extras ? colorjoe.extras[name] : null;
+	        var extra = name in mycolorpicker.extras ? mycolorpicker.extras[name] : null;
 
 	        if (extra) {
 	            cbs = extra(c, extraProxy(joe, name + i), params);
@@ -828,9 +828,9 @@ https://bebraw.github.com/colorjoe - 2022-11-17 */
 	    return a;
 	}
 
-	var colorjoe_1 = colorjoe;
+	var mycolorpicker_1 = mycolorpicker;
 
-	return colorjoe_1;
+	return mycolorpicker_1;
 
 })));
-//# sourceMappingURL=colorjoe.js.map
+//# sourceMappingURL=mycolorpicker.js.map

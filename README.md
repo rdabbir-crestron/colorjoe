@@ -2,9 +2,9 @@
 <img src="media/logo.png" width=30%>
 </h1>
 
-# colorjoe - The Scaleable Color Picker
+# mycolorpicker - The Scaleable Color Picker
 
-colorjoe was somewhat inspired by
+mycolorpicker was somewhat inspired by
 [ColorJack](http://www.dynamicdrive.com/dynamicindex11/colorjack/index.htm) and
 [RightJS Colorpicker](http://rightjs.org/ui/colorpicker/demo). Unlike those it
 actually scales pretty well. Essentially this means that you'll be able to
@@ -17,22 +17,22 @@ whatnot) thanks to the simple API it provides.
 ## Installation
 
 ```bash
-npm i colorjoe
+npm i mycolorpicker
 ```
 
-If you prefer a standalone dist, add prepackaged `dist/colorjoe.js` and `css/colorjoe.css` to your page or use AMD to load
+If you prefer a standalone dist, add prepackaged `dist/mycolorpicker.js` and `css/mycolorpicker.css` to your page or use AMD to load
 the dependencies from `src/`.
 
 ## Usage
 
 ```javascript
-const joe = colorjoe.rgb(element_id_or_dom_object, initial_color_value, extras);
+const joe = mycolorpicker.rgb(element_id_or_dom_object, initial_color_value, extras);
 ```
 
 or
 
 ```javascript
-const joe = colorjoe.hsl(element_id_or_dom_object, initial_color_value, extras);
+const joe = mycolorpicker.hsl(element_id_or_dom_object, initial_color_value, extras);
 ```
 
 ### Event Handling
@@ -61,11 +61,11 @@ that one.color default constructor would accept.
 
 ### Extras
 
-In order to make it easier to customize a picker based on your needs, colorjoe
+In order to make it easier to customize a picker based on your needs, mycolorpicker
 provides a few extras. The following example shows how to use them:
 
 ```javascript
-const joe = colorjoe.hsl('hslPicker', 'red', [
+const joe = mycolorpicker.hsl('hslPicker', 'red', [
     'currentColor',
     'alpha',
     ['fields', {space: 'HSL', limit: 255, fix: 0},
@@ -92,12 +92,12 @@ It is possible to implement your custom extras without having to hack the core
 code. This can be done as follows:
 
 ```javascript
-colorjoe.registerExtra('text', (p, joe, o) => {
+mycolorpicker.registerExtra('text', (p, joe, o) => {
     // attach new elements to p element here (as children that is)
     // o is optional and will contain any parameters you might have
     // passed to the extra using the array syntax
 
-    // optional return. these are triggered by colorjoe
+    // optional return. these are triggered by mycolorpicker
     // use this way instead of joe.on
     return {
         change(col) {},
@@ -109,7 +109,7 @@ colorjoe.registerExtra('text', (p, joe, o) => {
 Now you can simply pass your `text` extra amongst the others and it will just
 work.
 
-## Sites Using colorjoe
+## Sites Using mycolorpicker
 
 * [HTML Color Codes](http://htmlcolorcodes.com/)
 * [CSS Gradient](https://cssgradient.io/)
@@ -120,7 +120,7 @@ PRs are welcome!
 
 ## Contributors
 
-* [Juho Vepsäläinen](https://github.com/bebraw) - Core
+* [Raghavendra Dabbir](https://github.com/rdabbir-crestron) - Core
 * [Esa-Matti Suuronen](https://github.com/epeli) -
   [Grunt](https://github.com/cowboy/grunt) support + removeAllListeners
 * [Peter Müller](https://github.com/Munter) -
@@ -130,7 +130,7 @@ PRs are welcome!
 * [Artem Zakharchenko](https://github.com/blackrabbit99) - Fix issue with initial color when it was set black on RGB (#20).
 * [Tyler Waters](https://github.com/tswaters) - Improve CSS to work with IE better. Ensure `done` callback is fired for extras. Add validation to extra fields to avoid exceptions from one-color.
 * [Elsa Balderrama](https://github.com/Lexas) - Trigger `done` correctly for alpha slider.
-* [Jesse Keane](https://github.com/jarofghosts) - Add `onecolor` to `package.json` so that colorjoe works with Browserify
+* [Jesse Keane](https://github.com/jarofghosts) - Add `onecolor` to `package.json` so that mycolorpicker works with Browserify
 * [Sam Potts](https://github.com/SamPotts) - Improve formatting, generate random ids for labels, IE9+ support.
 * [Mirza Zulfan](https://github.com/mirzazulfan) - Logo. #48, #49
 * [Andreas Lind](https://github.com/papandreou) - Port build to rollup. #47
@@ -144,4 +144,4 @@ PRs are welcome!
 
 ## License
 
-colorjoe is available under MIT. See [LICENSE](https://github.com/bebraw/colorjoe/blob/master/LICENSE) for more details.
+mycolorpicker is available under MIT. See [LICENSE](https://github.com/rdabbir-crestron/mycolorpicker/blob/master/LICENSE) for more details.

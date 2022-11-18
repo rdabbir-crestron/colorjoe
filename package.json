@@ -1,8 +1,8 @@
 {
-  "name": "colorjoe",
+  "name": "mycolorpicker",
   "description": "Scaleable color picker",
-  "author": "Juho Vepsalainen <bebraw@gmail.com>",
-  "version": "4.2.0",
+  "author": "Raghavendra Kumar Dabbir",
+  "version": "1.0.0",
   "dependencies": {
     "dragjs": "^0.8.0",
     "onecolor": "^3.0.5"
@@ -15,11 +15,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://bebraw@github.com/bebraw/colorjoe.git"
+    "url": "https://github.com/rdabbir-crestron/mycolorpicker.git"
   },
-  "homepage": "https://bebraw.github.com/colorjoe",
+  "homepage": "",
   "bugs": {
-    "url": "https://github.com/bebraw/colorjoe/issues"
+    "url": "https://github.com/rdabbir-crestron/mycolorpicker/issues"
   },
   "keywords": [
     "color",
@@ -27,12 +27,12 @@
     "requirejs",
     "amd"
   ],
-  "main": "dist/colorjoe.js",
+  "main": "dist/mycolorpicker.js",
   "license": "MIT",
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/bebraw/colorjoe/blob/master/LICENSE"
+      "url": "https://github.com/rdabbir-crestron/mycolorpicker/blob/master/LICENSE"
     }
   ],
   "scripts": {

@@ -7,10 +7,10 @@ const now = new Date();
 const yyyymmdd = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`
 
 const config = {
-  input: 'src/colorjoe.js',
+  input: 'src/mycolorpicker.js',
   output: {
-    file: 'dist/colorjoe.js',
-    name: 'colorjoe',
+    file: 'dist/mycolorpicker.js',
+    name: 'mycolorpicker',
     format: 'umd',
     sourcemap: true,
     banner: `/*! ${pkg.name} - v${pkg.version} - ${pkg.author} - ${pkg.license}\n${pkg.homepage} - ${yyyymmdd} */`
@@ -28,7 +28,7 @@ const minifiedConfig = {
   ...config,
   output: {
     ...config.output,
-    file: 'dist/colorjoe.min.js',
+    file: 'dist/mycolorpicker.min.js',
   },
   plugins: [
     ...config.plugins,

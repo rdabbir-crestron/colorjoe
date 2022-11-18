@@ -3,9 +3,9 @@ var ONECOLOR = require('onecolor/one-color-all'); // Use the all build with cmyk
 var utils = require('./utils');
 var extras = require('./extras');
 
-var colorjoe = function(cbs) {
+var mycolorpicker = function(cbs) {
     if (!all(isFunction, [cbs.init, cbs.xy, cbs.z])) {
-        return console.warn("colorjoe: missing cb");
+        return console.warn("mycolorpicker: missing cb");
     }
 
     return function(element, initialColor, extras) {
@@ -19,7 +19,7 @@ var colorjoe = function(cbs) {
 };
 
 /* pickers */
-colorjoe.rgb = colorjoe({
+mycolorpicker.rgb = mycolorpicker({
     init: function(col, xy, z) {
         var ret = ONECOLOR(col).hsv();
 
@@ -42,7 +42,7 @@ colorjoe.rgb = colorjoe({
     },
 });
 
-colorjoe.hsl = colorjoe({
+mycolorpicker.hsl = mycolorpicker({
     init: function(col, xy, z) {
         var ret = ONECOLOR(col).hsl();
 
@@ -65,18 +65,18 @@ colorjoe.hsl = colorjoe({
     },
 });
 
-colorjoe.extras = {};
+mycolorpicker.extras = {};
 
-colorjoe.registerExtra = function(name, fn) {
-    if (name in colorjoe.extras) {
+mycolorpicker.registerExtra = function(name, fn) {
+    if (name in mycolorpicker.extras) {
         console.warn('Extra "' + name + '"has been registered already!');
     }
 
-    colorjoe.extras[name] = fn;
+    mycolorpicker.extras[name] = fn;
 };
 
 for (var k in extras) {
-    colorjoe.registerExtra(k, extras[k]);
+    mycolorpicker.registerExtra(k, extras[k]);
 }
 
 function RGB_BG(e, h) {
@@ -85,7 +85,7 @@ function RGB_BG(e, h) {
 
 function setup(o) {
     if (!o.e) {
-        return console.warn("colorjoe: missing element");
+        return console.warn("mycolorpicker: missing element");
     }
 
     var e = isString(o.e) ? document.getElementById(o.e) : o.e;
@@ -222,7 +222,7 @@ function setup(o) {
                 listeners[evt].push({ name: name, fn: cb });
             } else {
                 console.warn(
-                    'Passed invalid evt name "' + evt + '" to colorjoe.on'
+                    'Passed invalid evt name "' + evt + '" to mycolorpicker.on'
                 );
             }
 
@@ -262,7 +262,7 @@ function getColor(c) {
     }
 
     if (isDefined(c)) {
-        console.warn("Passed invalid color to colorjoe, using black instead");
+        console.warn("Passed invalid color to mycolorpicker, using black instead");
     }
 
     return ONECOLOR("#000");
@@ -286,7 +286,7 @@ function setupExtras(p, joe, extras) {
             name = e;
             params = {};
         }
-        var extra = name in colorjoe.extras ? colorjoe.extras[name] : null;
+        var extra = name in mycolorpicker.extras ? mycolorpicker.extras[name] : null;
 
         if (extra) {
             cbs = extra(c, extraProxy(joe, name + i), params);
@@ -338,4 +338,4 @@ function id(a) {
     return a;
 }
 
-module.exports = colorjoe;
+module.exports = mycolorpicker;
