@@ -1,4 +1,4 @@
-/*! mycolorpicker - v1.0.0 - Raghavendra Kumar Dabbir - MIT
+/*! @rags/mycolorpicker - v1.0.0 - Raghavendra Kumar Dabbir - MIT
  - 2022-11-18 */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
